@@ -1,29 +1,6 @@
 
 
 
-(defn variable?
-  " is e is a variable? "
-  [e]
-  (symbol? e))
-
-(defn same-variable?
-  " are v1 and v2 the same variable? "
-  [v1 v2]
-  (and (variable? v1)
-       (variable? v2)
-       (= v1 v2)))
-
-(defn make-sum
-  " constructs the sum of a1 and a2 "
-  [a1 a2]
-  (cond (and (number? a1)
-             (number? a2)) (+ a1 a2)
-        (and (= a1 0)
-             (variable? a2)) a2
-        (and (= a2 0)
-             (variable? a1)) a1      
-        :else (list '+ a1 a2))
-  )
 
 (defn make-product
   " construct the product of m1 and m2 "
